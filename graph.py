@@ -60,8 +60,7 @@ class Graph:
             degree_sequence.append(len(self.graph[node]))
 
     def to_edges(self, show_node_name=False):
-        adjacency_matrix = self.adjacency_matrix
-        x, y = np.where(n2.adjacency_matrix>0)
+        x, y = np.where(self.adjacency_matrix>0)
         if show_node_name:
             return [(chr(node1+ord("a")), chr(node2+ord("a"))) for node1, node2 in zip(x, y)]
         return [(node1, node2) for node1, node2 in zip(x, y)]
