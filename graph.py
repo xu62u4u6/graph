@@ -62,5 +62,5 @@ class Graph(dict):
             lines = f.readlines()
 
         for line in lines:
-            src, dst = line.strip().split("\t")
+            src, dst = line.strip().split("\t\t")
             self.add_edge(src, dst)
