@@ -56,3 +56,11 @@ class Graph(dict):
                     continue
                 undirected_graph.add_edge(dst, src)
         return undirected_graph
+    
+    def load_graph_from_edges_file(self, path):
+        with open(path, "r") as f:
+            lines = f.readlines()
+
+        for line in lines:
+            src, dst = line.strip().split("\t")
+            self.add_edge(src, dst)
